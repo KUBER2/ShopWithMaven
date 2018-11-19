@@ -76,6 +76,10 @@ public class ProductDaoImpl implements ProductDao {
 
     public void removeProductByName(String productName) {
         ProductsList<Product> listFromFile = new ProductsList<Product>();
+        Product productToRemove = this.getProductByName(productName);
+        listFromFile.remove(productToRemove);
+        this.saveProducts(listFromFile);
+        /*
         try {
             FileReader fileReader = new FileReader(fileName);
             BufferedReader reader = new BufferedReader(fileReader);
@@ -101,6 +105,7 @@ public class ProductDaoImpl implements ProductDao {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
 
     }
 

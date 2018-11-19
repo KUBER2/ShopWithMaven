@@ -36,4 +36,18 @@ public class User {
     public String getPassword() {
         return password;
     }
+
+    public String toStringDao(){
+        return new StringBuilder().append(id).append("#").append(login).append("#").append(password).append("\n").toString();
+    }
+
+    public User (String lineFromFile){
+
+        String[] userDataArray = lineFromFile.split("#");
+        this.id = Integer.parseInt(userDataArray[0]);
+        this.login = userDataArray[1];
+        this.password = userDataArray[2];
+
+    }
+
 }
