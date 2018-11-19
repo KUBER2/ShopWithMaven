@@ -1,7 +1,6 @@
 package service;
 
 import entity.User;
-import entity.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 

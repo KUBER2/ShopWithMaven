@@ -75,5 +75,28 @@ public class Product {
                 ", productCount=" + productCount +
                 '}';
     }
+    public String toStringDao() {
+        return  id +"#" + productName + "#" + price + ", weight=" + weight +"#" + color +  "#" + productCount;
+    }
+
+    public Product (String lineFromFile){
+
+        String[] productDataArray = lineFromFile.split("#");
+
+        long id = Long.parseLong(productDataArray[0]);
+        this.id = Integer.parseInt(productDataArray[5]);
+        this.productName = productDataArray[1];
+        this.color = productDataArray[4];
+        this.weight = Float.parseFloat(productDataArray[3]);
+        this.price = Float.parseFloat(productDataArray[2]);
+        /*
+        int productCount = Integer.parseInt(productDataArray[5]);
+        String productName = productDataArray[1];
+        String color = productDataArray[4];
+        float weight = Float.parseFloat(productDataArray[3]);
+        float price = Float.parseFloat(productDataArray[2]);
+        final Product product = new Product(id, productCount, productName, color, price, weight);  return product;
+        */
+    }
 
 }

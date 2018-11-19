@@ -1,46 +1,23 @@
-package entity;
-
+package service;
 import api.UserService;
-
-import java.util.LinkedList;
+import entity.User;
+import java.util.ArrayList;
 import java.util.List;
-
 public class UserServiceImpl implements UserService {
-
     List<User> users;
-
-    public UserServiceImpl (){
-        users = new LinkedList<User>();
+    public UserServiceImpl() {
+        this.users = new ArrayList<User>();
     }
-    public UserServiceImpl (User user ){
-        users = new LinkedList<User>();
-        users.add(user);
+    public UserServiceImpl(List<User> users) {
+        this.users = users;
     }
-    public UserServiceImpl(List<User> users){
-        this.users=users;
-    }
-
-
-    public List<User> getAllUser() {
-        return users;
-    }
-
-
-    public void addUser(User user) {
-        this.users.add(user);
-    }
-
-
     public List<User> getAllUsers() {
         return users;
     }
-
-    public void setAllUsers(List<User> allUsers) {
-        this.users = allUsers;
+    public void addUser(User user) {
+        users.add(user);
     }
-
-
-    public void removeUserById (Long userId) {
+    public void removeUserById(Long userId) {
         for(int i=0;i<users.size();i++){
             //wyciągnięcie i-tego usera z listy
             User userFromList = users.get(i);
