@@ -1,12 +1,19 @@
-package pl.jakubrola;
+package entity;
 
 public class User {
-    private int id;
+    private long id;
     private String login;
     private String password;
 
+    public User(long id, String login, String pass){
+        super();
+        this.id = id;
+        this.login=login;
+        this.password = pass;
+    }
 
-    public void setId(int  id){
+
+    public void setId(long  id){
         this.id = id;
     }
 
@@ -18,7 +25,7 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

@@ -1,4 +1,4 @@
-package pl.jakubrola;
+package entity;
 
 public class Cloth extends Product {
 
