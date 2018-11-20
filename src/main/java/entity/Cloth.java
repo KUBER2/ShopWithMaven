@@ -9,6 +9,11 @@ public class Cloth extends Product {
         this.material=material;
         this.size = size;
     }
+    public Cloth(Long id, String productName, Float price, Float weight, String color, Integer productCount, String size, String material) {
+        super(id, productCount, productName, color, price, weight);
+        this.size = size;
+        this.material = material;
+    }
 
     public void setSize(String size) {
         this.size = size;
